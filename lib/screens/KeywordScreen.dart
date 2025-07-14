@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onpoint/screens/ResultScreen.dart';
+import '../screens/ResultScreen.dart';
+import '../services/progress_service.dart';
 
 // 화면의 상태가 변하므로 StatefulWidget 사용
 class KeywordScreen extends StatefulWidget {
@@ -36,6 +37,7 @@ class _KeywordScreenState extends State<KeywordScreen> {
 
       //4개 선택되면 다음 화면(Resultscreen)으로 이동
       if (selected.length == 4){
+        ProgressService.incrementCompletedDays(); //진천도 1 증가
         Navigator.push(
           context, 
           MaterialPageRoute(
